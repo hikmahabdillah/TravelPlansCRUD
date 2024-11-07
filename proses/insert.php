@@ -9,19 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $catatan = $_POST['catatan'];
   $status = $_POST['status'];
 
-  // Inisialisasi array untuk menampung respons
-  $response = [
-    'status' => 'error',
-    'message' => 'Gagal menambahkan data'
-  ];
-  
-  // Validasi tanggal
-  if ($tanggal <= date('Y-m-d')) {
-    $response['message'] = 'Tanggal harus sesuai.';
-    echo json_encode($response);
-    exit; //menghentikan eksekusi skrip lebih lanjut
-  }
-
   // Query untuk menambahkan data
   $query = "INSERT INTO TravelPlans (Destination, TravelDate, Budget, Transportation, Notes, Status) 
             VALUES ('$destinasi', '$tanggal', '$budget', '$transportasi', '$catatan', '$status')";
@@ -31,11 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   // Periksa apakah query berhasil dijalankan
   if ($stmt) {
-    $response['status'] = 'success';
-    $response['message'] = 'Berhasil menambahkan data!';
+    header("Location: .././");
   }
-
-  // Kirim respons dalam format JSON
-  echo json_encode($response);
-  exit; //menghentikan eksekusi skrip lebih lanjut
 }

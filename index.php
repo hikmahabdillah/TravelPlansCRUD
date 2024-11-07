@@ -21,14 +21,15 @@ require_once "./proses/select.php";
     <input type="text" id="destination" name="destinasi" required><br><br>
 
     <label for="travelDate">Tanggal:</label>
-    <input type="date" id="travelDate" name="tanggal" required><br><br>
+    <input type="date" id="travelDate" name="tanggal" min="<?php echo date('Y-m-d'); ?>" required><br><br>
 
     <label for="budget">Budget (Rp):</label>
-    <input type="number" id="budget" name="budget" min="0" step="1000000" required><br><br>
+    <input type="number" id="budget" name="budget" min="0" required><br><br>
 
     <label for="transportation">Transportasi:</label>
     <select id="transportation" name="transportasi" required>
       <option value="Airplane">Airplane</option>
+      <option value="Ship">Ship</option>
       <option value="Train">Train</option>
       <option value="Bus">Bus</option>
       <option value="Car">Car</option>
@@ -51,7 +52,6 @@ require_once "./proses/select.php";
   <table border="1px" style="border-collapse: collapse; margin: auto;" cellpadding="10px">
     <thead>
       <tr>
-        <th>id</th>
         <th>Destinasi</th>
         <th>Tanggal</th>
         <th>Budget</th>
@@ -76,7 +76,6 @@ require_once "./proses/select.php";
         $status = $result['Status'];
 
         echo "<tr>";
-        echo "<td>$id</td>";
         echo "<td>$destination</td>";
         echo "<td>$tanggal</td>";
         echo "<td>Rp $formattedBudget</td>";
@@ -90,7 +89,7 @@ require_once "./proses/select.php";
         <td>
           <form action="proses/delete.php" method="post" class="delete-plan">
             <input type="hidden" name="plan_id" value="<?php echo $id ?>">
-            <button type="submit" class="delete-plan">Delete</>
+            <button type="submit" class="delete-plan" onclick="return confirm('Are you sure you want to delete this plan?')">Delete</>
           </form>
         </td>
       <?php
@@ -98,9 +97,6 @@ require_once "./proses/select.php";
       ?>
     </tbody>
   </table>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script/insert.js"></script>
-  <script src="script/delete.js"></script>
 </body>
 
 </html>

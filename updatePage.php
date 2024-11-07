@@ -32,14 +32,15 @@ require_once "./proses/selectById.php";
     <input type="text" id="destination" name="destinasi" value=<?php echo $destinasi; ?> required><br><br>
 
     <label for="travelDate">Tanggal:</label>
-    <input type="date" id="travelDate" name="tanggal" value=<?php echo $tanggal; ?> required><br><br>
+    <input type="date" id="travelDate" name="tanggal" min="<?php echo date('Y-m-d'); ?>" value=<?php echo $tanggal; ?> required><br><br>
 
     <label for="budget">Budget (Rp):</label>
-    <input type="number" id="budget" name="budget" min="0" step="1000000" value=<?php echo $budget; ?> required><br><br>
+    <input type="number" id="budget" name="budget" min="0" value=<?php echo $budget; ?> required><br><br>
 
     <label for="transportation">Transportasi:</label>
     <select id="transportation" name="transportasi" value=<?php echo $transportasi; ?> required>
       <option value="Airplane" <?php echo ($transportasi == 'Airplane') ? 'selected' : ''; ?>>Airplane</option>
+      <option value="Ship" <?php echo ($transportasi == 'Ship') ? 'selected' : ''; ?>>Ship</option>
       <option value="Train" <?php echo ($transportasi == 'Train') ? 'selected' : ''; ?>>Train</option>
       <option value="Bus" <?php echo ($transportasi == 'Bus') ? 'selected' : ''; ?>>Bus</option>
       <option value="Car" <?php echo ($transportasi == 'Car') ? 'selected' : ''; ?>>Car</option>
@@ -58,9 +59,6 @@ require_once "./proses/selectById.php";
 
     <button type="submit">Submit</button>
   </form>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="script/update.js"></script>
 </body>
 
 </html>

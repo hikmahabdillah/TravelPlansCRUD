@@ -10,15 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $catatan = $_POST['catatan']; 
   $status = $_POST['status']; 
 
-  $response = ['status' => 'error', 'message' => 'Failed to update the plan.'];
-
-  // Validasi tanggal
-  if ($tanggal <= date('Y-m-d')) {
-    $response['message'] = 'Tanggal harus sesuai.';
-    echo json_encode($response);
-    exit; //menghentikan eksekusi skrip lebih lanjut
-  }
-
   $query = "UPDATE TravelPlans SET 
               Destination = '$destinasi',
               TravelDate = '$tanggal',
@@ -32,10 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   
   // Periksa apakah query berhasil dijalankan
   if ($stmt) {
-    $response['status'] = 'success';
-    $response['message'] = 'Plan updated successfully.';
-    }
-    echo json_encode($response);
-    exit; //menghentikan eksekusi skrip lebih lanjut
+    header("Location: .././");
+  }
 }
 
