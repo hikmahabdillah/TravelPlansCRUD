@@ -12,7 +12,7 @@ if (isset($_POST['plan_id'])) {
   if($result){
     header("Location: .././");
   }else{
-    echo "<script>alert('Gagal')</script>";
+    echo "<script>alert('Gagal menghapus data')</script>";
     echo "<script>window.location.href='.././'</script>";
   }
 }

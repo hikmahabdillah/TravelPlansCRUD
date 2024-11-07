@@ -3,7 +3,7 @@ require_once "database.php";
 
 $query = "SELECT * FROM TravelPlans";
 
-// hasil query disimpan
+// query dieksekusi dan hasil query disimpan
 $stmt = $conn->query($query);
 
 // mengambil semua hasil dari query

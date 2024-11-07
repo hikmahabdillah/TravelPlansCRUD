@@ -19,5 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Periksa apakah query berhasil dijalankan
   if ($stmt) {
     header("Location: .././");
+    exit();
+  }else{
+    echo "<script>alert('Gagal menambah data!')</script>";
+    echo "<script>window.location.href='.././'</script>";
   }
 }

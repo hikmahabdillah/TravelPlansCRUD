@@ -2,6 +2,7 @@
 require_once "../database.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  // get value form
   $planId = $_POST['plan_id'];  
   $destinasi = $_POST['destinasi']; 
   $tanggal = $_POST['tanggal']; 
@@ -19,11 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               Status = '$status' 
             WHERE Id = '$planId'";
     
+  // query dieksekusi dan hasil query disimpan
   $stmt = $conn->query($query);
   
   // Periksa apakah query berhasil dijalankan
   if ($stmt) {
     header("Location: .././");
+  }else{
+    header("Location: .././updatePage?plan_id=$planId");
   }
 }
-

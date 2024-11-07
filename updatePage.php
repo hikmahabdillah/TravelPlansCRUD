@@ -26,7 +26,8 @@ require_once "./proses/selectById.php";
     $catatan = $result['Notes'];
     $status = $result['Status'];
     ?>
-    <input type="text" name="plan_id" id="plan_id" value="<?php echo $id; ?>" hidden>
+    
+    <input type="hidden" name="plan_id" id="plan_id" value="<?php echo $id;?>">
 
     <label for="destination">Destinasi:</label>
     <input type="text" id="destination" name="destinasi" value=<?php echo $destinasi; ?> required><br><br>

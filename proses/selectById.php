@@ -7,7 +7,7 @@ if (isset($_GET['plan_id'])) {
 
   $query = "SELECT * FROM TravelPlans WHERE id = '$planId'";
   
-  // hasil query disimpan
+  // query dieksekusi dan hasil query disimpan
   $stmt = $conn->query($query);
 
   // untuk mengambil satu baris hasil dari query.

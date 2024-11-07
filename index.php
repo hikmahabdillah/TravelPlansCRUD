@@ -63,14 +63,16 @@ require_once "./proses/select.php";
     </thead>
     <tbody>
       <?php
+      // menampilkan semua data dengan looping, dlm setiap iterasi menampilkan data 1 baris.
       foreach ($results as $result) {
         $id = $result['Id'];
         $destination = $result['Destination'];
         $tanggal = $result['TravelDate'];
         $budget = $result['Budget'];
         $formattedBudget = number_format($budget, 0, '', '.'); 
-        // params 2(jml desimal yg ingin ditampilkan di belakang angka)
+        // params 2(jml desimal yg ingin ditampilkan di belakang angka asli(budget))
         // params 3(untuk pemisah angka desimal)
+        // params 4(untuk pemisah ribuan(3digit))
         $transportasi = $result['Transportation'];
         $catatan = $result['Notes'];
         $status = $result['Status'];
