@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   try {
     // Query untuk menambahkan data
-    $query = "INSERT INTO TravelPlans (Destination, TravelDate, Budget, Transportation, Nots, Status) 
+    $query = "INSERT INTO TravelPlans (Destination, TravelDate, Budget, Transportation, Notes, Status) 
             VALUES ('$destinasi', '$tanggal', '$budget', '$transportasi', '$catatan', '$status')";
 
     // Menjalankan query untuk menambahkan data ke database

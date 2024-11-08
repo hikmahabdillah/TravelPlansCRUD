@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   try{
     $query = "UPDATE TravelPlans SET 
                 Destination = '$destinasi',
-                TravelDat = '$tanggal',
+                TravelDate = '$tanggal',
                 Budget = '$budget',
                 Transportation = '$transportasi',
                 Notes = '$catatan',
