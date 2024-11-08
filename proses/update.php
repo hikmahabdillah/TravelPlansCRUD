@@ -11,22 +11,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $catatan = $_POST['catatan']; 
   $status = $_POST['status']; 
 
-  $query = "UPDATE TravelPlans SET 
-              Destination = '$destinasi',
-              TravelDate = '$tanggal',
-              Budget = '$budget',
-              Transportation = '$transportasi',
-              Notes = '$catatan',
-              Status = '$status' 
-            WHERE Id = '$planId'";
+  try{
+    $query = "UPDATE TravelPlans SET 
+                Destination = '$destinasi',
+                TravelDat = '$tanggal',
+                Budget = '$budget',
+                Transportation = '$transportasi',
+                Notes = '$catatan',
+                Status = '$status' 
+              WHERE Id = '$planId'";
+      
+    // query dieksekusi dan hasil query disimpan
+    $stmt = $conn->query($query);
     
-  // query dieksekusi dan hasil query disimpan
-  $stmt = $conn->query($query);
-  
-  // Periksa apakah query berhasil dijalankan
-  if ($stmt) {
-    header("Location: .././");
-  }else{
-    header("Location: .././updatePage?plan_id=$planId");
+    // Periksa apakah query berhasil dijalankan
+
+    if ($stmt) {
+      header("Location: .././");
+    }
+  }catch (PDOException $e) {
+      echo "<script>alert('Gagal update data!')</script>";
+      echo "<script>window.location.href='.././updatePage.php?plan_id=$planId'</script>";
   }
 }

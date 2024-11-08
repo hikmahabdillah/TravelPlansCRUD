@@ -7,12 +7,8 @@ if (isset($_POST['plan_id'])) {
 
   $query = "DELETE FROM TravelPlans WHERE Id = '$planId'";
 
-  $result = $conn->query($query);
+  $conn->query($query);
 
-  if($result){
-    header("Location: .././");
-  }else{
-    echo "<script>alert('Gagal menghapus data')</script>";
-    echo "<script>window.location.href='.././'</script>";
-  }
+  // setelah query dieksekusi akan di arahkan ke main page
+  header("Location: .././");
 }
