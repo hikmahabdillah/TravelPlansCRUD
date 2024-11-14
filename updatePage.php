@@ -15,7 +15,6 @@ require_once "./proses/selectById.php";
 
 <body style="font-family: 'Poppins', serif; padding: 2rem;">
   <h2>Update Plan</h2>
-  <div id="error-msg" style="color:red"></div>
   <form action="proses/update.php" method="post" id="updateplan">
     <?php
     $id = $result['Id'];

@@ -15,7 +15,6 @@ require_once "./proses/select.php";
 
 <scr style="font-family: 'Poppins', serif; padding: 2rem;">
 <h2>Create New Plan</h2>
-  <div id="error-msg" style="color:red"></div>
   <form action="proses/insert.php" method="post" id="insert-submit">
     <label for="destination">Destinasi:</label>
     <input type="text" id="destination" name="destinasi" required><br><br>
