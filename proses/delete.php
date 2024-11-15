@@ -9,6 +9,5 @@ if (isset($_POST['plan_id'])) {
 
   $conn->query($query);
 
-  // setelah query dieksekusi akan di arahkan ke main page
   header("Location: .././");
 }

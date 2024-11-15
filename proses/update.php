@@ -21,11 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 Status = '$status' 
               WHERE Id = '$planId'";
       
-    // query dieksekusi dan hasil query disimpan
     $stmt = $conn->query($query);
     
-    // Periksa apakah query berhasil dijalankan
-
     if ($stmt) {
       header("Location: .././");
     }

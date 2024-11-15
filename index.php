@@ -62,7 +62,6 @@ require_once "./proses/select.php";
     </thead>
     <tbody>
       <?php
-      // menampilkan semua data dengan looping, dlm setiap iterasi menampilkan data 1 baris.
       foreach ($results as $result) {
         $id = $result['Id'];
         $destination = $result['Destination'];
